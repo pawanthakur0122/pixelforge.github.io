@@ -1,0 +1,333 @@
+<style>
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2ecc71;
+      --accent-color: #e74c3c;
+      --dark-color: #2c3e50;
+      --light-color: #ecf0f1;
+      --transition-speed: 0.3s;
+      --gradient: linear-gradient(135deg, #3498db, #2ecc71);
+    }
+    .navbar {
+      padding: 1rem 2rem;
+      transition: all var(--transition-speed) ease;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1030;
+      background: transparent !important;
+    }
+    .navbar-scrolled {
+      background: rgba(255, 255, 255, 0.95) !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 0.8rem 2rem;
+    }
+    .navbar-brand {
+      font-weight: 800;
+      font-size: 2rem;
+      color: var(--dark-color);
+      position: relative;
+      overflow: hidden;
+      transition: all var(--transition-speed);
+    }
+    .navbar-brand span {
+      color: var(--primary-color);
+      position: relative;
+      z-index: 1;
+    }
+    .navbar-brand::after {
+      content: '';
+      position: absolute;
+      left: -100%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient);
+      transition: all 0.5s ease;
+      z-index: 0;
+      opacity: 0.1;
+    }
+    .navbar-brand:hover::after {
+      left: 0;
+    }
+    .navbar-nav {
+      margin-left: auto;
+      align-items: center;
+    }
+    .nav-link {
+      font-weight: 600;
+      color: var(--dark-color);
+      margin: 0 1.2rem;
+      padding: 0.5rem 0;
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all var(--transition-speed);
+    }
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background: var(--gradient);
+      transition: all var(--transition-speed) ease;
+      transform: translateX(-50%);
+    }
+    .nav-link:hover::before,
+    .nav-link.active::before {
+      width: 100%;
+    }
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+    .dropdown-menu {
+      background: #fff;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      margin-top: 1rem;
+      overflow: hidden;
+    }
+    .dropdown-item {
+      color: var(--dark-color);
+      padding: 0.75rem 1.5rem;
+      transition: all var(--transition-speed);
+      position: relative;
+    }
+    .dropdown-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--primary-color);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform var(--transition-speed) ease;
+    }
+    .dropdown-item:hover::before {
+      transform: scaleY(1);
+    }
+    .dropdown-item:hover {
+      background: #f8f9fa;
+      color: var(--primary-color);
+      padding-left: 1.75rem;
+    }
+    .nav-cta {
+      background: var(--gradient);
+      color: white;
+      padding: 0.6rem 1.5rem;
+      border-radius: 25px;
+      margin-left: 1rem;
+      transition: all var(--transition-speed);
+    }
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      color: white;
+    }
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        background: rgba(255, 255, 255, 0.98);
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-top: 1rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      .nav-link {
+        margin: 0.75rem 0;
+      }
+      .nav-cta {
+        display: inline-block;
+        margin: 1rem 0;
+      }
+    }
+  </style>
+</head>
+<body style="background: #f5f6fa; min-height: 100vh; padding-top: 80px;">
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><span>Rise</span>Well</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+          
+           
+          <li class="nav-item">
+            <a class="nav-link" href="#">Consult</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Community</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-cta" href="#">Clients</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <style>
+      .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center; 
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-content {
+        z-index: 2;
+      }
+      .hero-image-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        transform: perspective(1000px) rotateY(5deg);
+        transition: all var(--transition-speed);
+      }
+      .hero-image-container:hover {
+        transform: perspective(1000px) rotateY(0deg);
+      }
+      .hero-image {
+        transition: all var(--transition-speed);
+        transform: scale(1);
+      }
+      .hero-image-container:hover .hero-image {
+        transform: scale(1.05);
+      }
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: fadeInUp 1s both;
+      }
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        animation: fadeInUp 1s 0.2s both;
+      }
+      .btn-custom {
+        padding: 12px 30px;
+        font-weight: 600;
+        border-radius: 50px;
+        transition: all var(--transition-speed);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        animation: fadeInUp 1s 0.4s both;
+      }
+      .btn-primary-custom {
+        background-color: var(--primary-color);
+        border: none;
+        color: white;
+      }
+      .btn-primary-custom:hover {
+        background-color: darken(var(--primary-color), 10%);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+      }
+      .btn-outline-custom {
+        background-color: transparent;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        margin-left: 15px;
+      }
+      .btn-outline-custom:hover {
+        background-color: var(--primary-color);
+        color: white;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+      }
+      .btn-custom:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        transition: all 0.3s;
+        z-index: -1;
+      }
+      .btn-custom:hover:before {
+        width: 100%;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (max-width: 991.98px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+      }
+      @media (max-width: 767.98px) {
+        .hero {
+          padding: 120px 0 80px;
+          height: auto;
+        }
+        .hero-image-container {
+          margin-top: 40px;
+        }
+      }
+      @media (max-width: 575.98px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+        .btn-custom {
+          padding: 10px 20px;
+        }
+        .btn-outline-custom {
+          margin-left: 0;
+          margin-top: 15px;
+        }
+      }
+    </style>
+  
+    <!-- Hero Section -->
+    <section class="hero section" id="home">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 hero-content">
+            <h1>You are not Alone</h1>
+            <p>Explore resources, connect with others, and take the first step toward healing.</p>
+            <div class="hero-buttons">
+              <button class="btn btn-custom btn-primary-custom">Seek Support</button>
+              <button class="btn btn-custom btn-outline-custom">Join Now</button>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-image-container">
+              <img src="/images/hAPPINESS.jpg" alt="Hero Image" class="img-fluid hero-image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
